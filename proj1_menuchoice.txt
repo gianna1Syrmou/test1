@@ -1,0 +1,59 @@
+        System.out.println("Options: 1: Incert New Student. 2:  Insert Trainer. 3: Insert Assignment.");      
+int menuChoice = sc.nextInt();
+        while (menuChoice!=0){
+        switch(menuChoice){
+            case 1: 
+                System.out.println("Give Student Name:");
+                String name = sc.next();
+                System.out.println("Give Last Name");
+                String surName = sc.next();
+                System.out.println("Set Course");
+                int whichCourse;
+                
+                System.out.println("Για Java full time: 1, Για Java part time 2");
+                System.out.println("Για c# full time: 3, Gia c# part time: 4");
+                whichCourse = sc.nextInt();
+                if (whichCourse==1){
+                Course course=course1;
+                } else if (whichCourse==2){
+                course=cB9ptJava;
+                } else if (whichCourse==3) {
+                course=cB9ftC;
+                }else if (whichCourse==4){
+                course=cB9ptC;
+                }
+                System.out.println(course);
+                Student st01 = new Student(name, surName,course);
+                System.out.println(st01);
+                Student.myStudents.add(st01);
+                System.out.println("thelete na valete allon mathiti?");
+                System.out.println("For yes press 1. For new Instructor press 2. For exit press 0.");
+                menuChoice=sc.nextInt();         
+        break;
+        
+            case 2: 
+                System.out.println("Kαταχώρηση Νέου Καθηγητή");
+                System.out.println("Καταχωρήστε Όνομα:");
+                String tname = sc.next();
+                System.out.println("Καταχωρήστε Επώνυμο");
+                String tLastname=sc.next();
+                System.out.println("Καταχωρήστε course");
+                whichCourse = sc.nextInt();
+                 if (whichCourse==1){
+                    course=cB9ftJava;
+                } else if (whichCourse==2){
+                course=cB9ptJava;
+                } else if (whichCourse==3) {
+                course=cB9ftC;
+                }else if (whichCourse==4){
+                course=cB9ptC;
+                }
+                Teacher t01 = new Teacher(tname,tLastname,course);
+                teachers.add(t01);
+                break;
+            case 3: System.out.println("Έξοδος από το menu: Πατήστε 0.");   
+            break;
+        }
+        
+    }
+        System.out.println(myStudents);
